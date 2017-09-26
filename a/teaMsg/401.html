@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta content="telephone=no" name="format-detection">
+		<meta name="wap-font-scale" content="no">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>活动</title>
+		<link href="../css/index.css?+Math.random()" rel="stylesheet">
+		<link rel="stylesheet" href="../css/swiper-3.4.0.min.css">
+		<body class="marginNone padBottom20 theBody">
+			<div class="mainContent actBlo" id="vuebody" v-on:click="outlink()">
+				<div class="party-cover"  :style="{backgroundImage: 'url('+imglist+')'}"></div>
+				<div class="padLeftRight borBottom10 padTop10 padBottom10">
+					<p class="actP padBottom10">
+						{{detailData.title}}
+					</p>
+					<div class="publish_per webkBlo">
+						<img :src="detailData.publish_logo" class="publish_img"/>
+						<div class="publish_con webInp">
+							发布人:<span class="publisher">{{detailData.publish_nickname}}</span>
+							<p class="publish_fee" v-show="detailData.fee>0">￥<span class="red_fee">{{detailData.fee}}</span>/人</p>
+							<p class="publish_fee" v-show="detailData.fee == 0"><span class="blueFree">免费</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="listBlock webkBlo">
+					<p class="leftTou">
+						<img src="../images/huo_time.png" />
+						报名时间
+					</p>
+					<div class="webInp">
+						<span class="txt">
+							{{detailData.start_time}}
+						</span>
+					</div>
+				</div>
+				<div class="listBlock webkBlo">
+					<p class="leftTou">
+						<img src="../images/huo_address.png" />
+						举办地址
+					</p>
+					<div class="webInp">
+						<span class="txt">
+							{{detailData.address}}
+						</span>
+						<!--<img src="../images/right.png" class="rightLink" />-->
+					</div>
+				</div>
+				<div class="listBlock webkBlo">
+					<p class="leftTou">
+						<img src="../images/huo_person.png" />
+						活动人数
+					</p>
+					<div class="webInp">
+						<span class="txt">
+							已报名{{apply_num}}人  限{{detailData.limit_num}}人
+						</span>
+					</div>
+				</div>
+				<div class="marginBody detailBlock marBottom20">
+					<!--<h4 class='blueFont size32 marBottom10'>{{detailData.title}}</h4>-->
+				    <div class='greyFont size13 marBottom10 linHeight18'>{{detailData.description}}</div>
+				</div>
+				<p class="greyMargin"></p>
+				<p class="takeIn" v-show="takelist.length>0">已报名</p>
+				<div class="padLeftRight takeBlo borBottom borTop" v-show="takelist.length>0">
+					<span  v-for="(item,index) in takelist" class="takeSpan">
+						<img :src="item.enter_logo"  class="take_head" />
+					</span>
+				</div>
+			</div>
+			<script src="../js/zepto.min.js"></script>
+			<script src="../js/common.js"></script>
+			<script src="../js/vue.js"></script>
+			<script src="../js/vue-resource.js"></script>
+			<script src="../js/layer.js"></script>
+			<script src="../js/swiper-3.4.0.jquery.min.js">
+			</script>
+			<script>
+				window.onload = function() {
+			new Vue({
+				el: '#vuebody',
+				data: {
+					detailData:{},
+					apply_num:"",
+					imglist: '',
+					takelist:[]
+				},
+				methods: {
+					getCourseList: function (){
+						let parm={"activity_id":idNum};
+						let that = this;       
+							that.$http({           
+								method:'POST',
+								url:jieUrl+"401",
+								params:parm
+							}).then(function(response){  
+								 that.detailData=response.data.d;
+								 that.apply_num = that.detailData.enter_logo_list.length;
+								 this.imglist = that.detailData.img_urls
+								 this.takelist = that.detailData.enter_logo_list;
+								 	if(this.imglist.indexOf('http')<0){
+								 		this.imglist = imgUrl+this.imglist;
+								 	}
+							},function(error){
+								alert('请求失败')
+							});
+					},
+					outlink: function(){
+						if(hasPlus<0){
+							window.location.href=andAppUrl; 
+						}
+					}
+				},
+				created: function(){
+					this.getCourseList();
+				},
+				mounted: function(){
+				}
+				});
+			}
+			</script>
+		</body>
+</html>

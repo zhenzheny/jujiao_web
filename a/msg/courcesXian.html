@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta content="telephone=no" name="format-detection">
+        <meta name="wap-font-scale" content="no">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>
+            每日秒杀
+        </title>
+        <link href="../../css/index.css" rel="stylesheet">
+    </head>
+    
+    <body class="marginNone padBottom20 theBody">
+    	<a class="disBlock">
+	      <div class="agencyName borBottom borTop padLeftRight webkBlo">
+	        <p class="agencyImg marRight9" id="teaDetail">
+	          <!--<img src="../../images/jigGou.png" class="marBottom7"/><br />
+	          <span class="guWenPer">
+	          	<img src="../../images/crown.png" class="marRight5" />姜老师<br />
+	          	<span class="greyEr size12">ssss</span>
+	          </span>-->
+	        </p>
+	        <div class="agencyMes webInp">
+	          <div class="agencyUl" id="courseFenQi">
+	          
+	          </div>
+	          
+	        </div>
+	      </div>
+	    </a>
+	
+        <div class="mainContent marginBody leftRight" id="vedioPrice">
+			<!--视频下方-->
+		</div>
+        <ul class="tabUl padLeftRight borBottom">
+            <li class="active">
+                <span>
+                    目录
+                </span>
+            </li>
+            <li>
+                <span>
+                    详情
+                </span>
+            </li>
+            <li>
+                <span>
+                    用户参与记录
+                </span>
+            </li>
+        </ul>
+        <div class="tabBlock">
+            <div class="tabContent">
+                <div class="tabCon">
+                    <div class="padLeftRight padBottom20">
+                        <p class="title color2C outLine">
+                            课程提纲
+                        </p>
+                        <div id="MuluId">
+                            <!--目录-->
+                        </div>
+                    </div>
+                </div>
+                <div class="tabCon disNone">
+                    <div class="padLeftRight padBottom20" id="jianJie">
+                    </div>
+                </div>
+                <div class="tabCon disNone">
+                    <div class="webkBlo padBottom10 borBottom marTop10 padLeftRight">
+                        <p class="pingPer marRight9">
+                            <img src="../../images/jigGou.png" />
+                        </p>
+                        <div class="webInp">
+                            <div class="greyFont size12 marBottom4">
+                                小蜻好
+                            </div>
+                            <p class="hasFleft">
+                                <span class="width50P">
+                                    参与
+                                    <font class="redFont">
+                                        1
+                                    </font>
+                                    次
+                                </span>
+                                <span class="width50P textRight">
+                                    2016-10-29&nbsp;8:00
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="webkBlo padBottom10 borBottom marTop10 padLeftRight">
+                        <p class="pingPer marRight9">
+                            <img src="../../images/jigGou.png" />
+                        </p>
+                        <div class="webInp">
+                            <div class="greyFont size12 marBottom4">
+                                小蜻蜓
+                            </div>
+                            <p class="hasFleft">
+                                <span class="width50P">
+                                    参与
+                                    <font class="redFont">
+                                        1
+                                    </font>
+                                    次
+                                </span>
+                                <span class="width50P textRight">
+                                    2016-10-29&nbsp;8:00
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../../js/zepto.min.js">
+        </script>
+        <script>
+            !(function($) {
+                var g = {
+                    init: function() {
+                        var _t = this;
+                        //调用tab
+                        _t.tab();
+                        /*一元课详情*/
+                        _t.keDetail();
+                        /*目录*/
+                        _t.directory();
+                    },
+                    //调用tab
+                    tab: function() {
+                        var _t = this;
+                        $(".tabUl li").each(function(index, element) {
+                            var i = index;
+                            $(this).on('click',
+                            function() {
+                                $(".tabUl li").removeClass("active");
+                                $(this).addClass("active");
+                                $(".tabContent .tabCon").hide();
+                                $(".tabContent .tabCon").eq(i).show();
+
+                            });
+                        });
+                    },
+                    keDetail: function() {
+                        var _t = this;
+                        var parm = {
+                            "id": 2
+                        };
+                        $.ajax({
+                            type: 'POST',
+                            url: 'http://118.89.150.168:8080/msg/207',
+                            data: parm,
+                            dataType: 'json',
+                            success: function(data) {
+                            	console.log(data)
+                                var data =data.d;
+                                var conTea="<img src='"+data.imgurl+"' class='marBottom7'/><br />"+
+								          "<p class='guWenPer'><img src='../../images/crown.png' class='marRight5' />"+data.lecturer+"<br />"+
+								          "<span class='greyEr size12'>"+data.lecturer+"</span></p>";
+				              	$("#teaDetail").html(conTea);
+				              	var conTeaRig="<p class='teaTitle marTop4'>"+data.title+"</p>"+
+									            "<p class='coloe9a marBottom7'>"+data.course_date+"开课</p>"+
+									            "<p class='coloe9a size12 height14'>"+data.study_num+"人学过&nbsp;|&nbsp;44人评价</p>"+
+									            "<p class='coloe9a size12 height14'>轰天教育</p>";
+								
+								if(data.is_fee==0){
+				              		var NeiRong="<div class='redFont textRight'><span class='price marRight9'>免费</span></div>";
+				              		conTeaRig+=NeiRong;
+				              	}else{
+				              		var NeiRong="<div class='redFont textRight'><span class='price marRight9'><font class='size12'>￥</font>3333</span>"+
+									            "<span class='daiQi'>分12期还款</span></div>";
+									            
+				              		conTeaRig+=NeiRong;
+				              	}
+								$("#courseFenQi").html(conTeaRig);
+                                var yiYuanCon = "<p class='redBiao marBottom10 marTop10'>" + data.category_name + "</p>" + "<p class='titleKe color333 marBottom7'>" + data.title + "</p>" + "<p class='moneyTime marBottom10 overHide'>" + "<span class='redFont marRight5'>￥<font class='size16'>1</font></span>" + "<span class='coloe9a delFont marRight5'>1999</span>" + "<span class='coloe9a marRight9'>" + data.course_date + "开课</span></p>";
+                                $("#underVideo").html(yiYuanCon);
+                                /*老师简介*/
+                                var jieCon = "<p class='title color2C size16 padTop20 marBottom10'>老师简介</p>\
+							            <p class='size12 color999 hasBig'>毕业学校：<span>" + data.university + "</span></p>\
+							            <p class='size12 color999 hasBig posRelite'>上课地址：<span class='width50P'>" + data.address + "</span></p>\
+							            <div class='webkBlo marTop4'><span class='size12 color999'>老师标签：</span>\
+						            	<span class='greyborSpan'>10年教龄</span><span class='greyborSpan'>雅思</span>\
+						            	<span class='greyborSpan'>雅思</span><span class='greyborSpan'>雅思</span></div>\
+							            <p class='color8d size16 padTop20 marBottom7'>自我介绍</p>\
+							            <p class='size12 color999 selfCon'>" + data.evaluation + "</p>";
+                                $("#jianJie").html(jieCon);
+                            }
+                            
+                        });
+
+                    },
+                    /*加载目录*/
+                    directory: function() {
+                        var _t = this;
+                        var muLuData = {
+                            "id": 1
+                        };
+                        $.ajax({
+                            type: 'POST',
+                            url: 'http://118.89.150.168:8080/msg/206',
+                            data: muLuData,
+                            dataType: 'json',
+                            success: function(data) {
+                            	
+                                var muLuCon = "<div>";
+                                for (var i = 0; i < data.d[data.d.length - 1].chapter; i++) {
+                                    muLuCon += "<ul class='keCheng keChengMu'><span class='greyPoint'></span><li class='title'><a data-id='" + data.d.url + " data-courseId='" + data.d.chapter + "'>第" + (i + 1) + "章</a>";
+                                    $.each(data.d,
+                                    function(key, value) {
+                                        if (value.chapter == i + 1) {
+                                            muLuCon += "<span class='time'>" + value.course_date + "&nbsp;" + value.start_time + "-" + value.end_time + "</span></li>" + "<li class='active'>" + value.title + "</li>";
+                                        }
+                                    })
+
+                                    muLuCon += "</ul>";
+                                }
+                                muLuCon += "</div>";
+                                $("#MuluId").html(muLuCon);
+
+                            },
+                            error: function(xhr, type) {
+                                console.info("服务器出错");
+                            }
+                        })
+                    }
+
+                }
+                $(function() {
+                    g.init();
+                });
+            })($);
+        </script>
+    </body>
+
+</html>

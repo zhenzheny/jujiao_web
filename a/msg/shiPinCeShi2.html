@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="wap-font-scale" content="no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<script src="https://cdn.jsdelivr.net/hls.js/latest/hls.min.js"></script>
+	<video id="video"></video>
+	<script>
+	  if(Hls.isSupported()) {
+	    var video = document.getElementById('video');
+	    var hls = new Hls();
+	    hls.loadSource('http://www.streambox.fr/playlists/test_001/stream.m3u8');
+	    hls.attachMedia(video);
+	    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+	      video.play();
+	  });
+	 }
+	</script>
+</body>
+</html>
