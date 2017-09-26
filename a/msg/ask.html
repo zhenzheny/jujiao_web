@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta content="telephone=no" name="format-detection">
+        <meta name="wap-font-scale" content="no">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>问答</title>
+        <link href="../css/index.css?+Math.random()" rel="stylesheet">
+        <link href="../css/scrollbar.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="bodyout" id="vuebody" @click="outlink()">
+			<div class="askout">
+				<div class="askcon webkBlo">
+					<img :src="detailData.publish_logo" class="askHead"/>
+					<div class="askname webInp">
+						<p class="name">{{detailData.publish_nickname}}<img v-if="detailData.publish_sex==1" src="../images/girl-icon.png" />
+						<img v-if="detailData.publish_sex==2" src="../images/boy-icon.png" />
+						</p>
+						<p class="time">{{detailData.create_time}}</p>
+					</div>
+					<img v-if="detailData.is_reward==1" src="../images/raise-icon.png" class="raiseimg"/>
+				</div>
+				<p class="askfont">{{detailData.description}}</p>
+				<!--<div v-if="detailData.img_urls" class="askimg" :style="{backgroundImage: 'url('+ask_img+')'}">
+				</div>-->
+					<ul class="replayBg">
+					<li v-for="(imgurl,index) in ask_img" v-bind:class="{ 'replayBg-a': (img_length===1), 'replayBg-b': (img_length===2) ,'replayBg-c': (img_length>2)}"  :style="{backgroundImage: 'url('+imgurl+')'}">
+						
+					</li>
+				</ul>
+				<!--<ul class="replayBg">{{img_length}}
+					<li v-for="(imgurl,index) in ask_img" v-bind:class="{ 'replayBg-a': (index=0), 'replayBg-b': (index==1) ,'replayBg-c': (index>=2)}"  :style="{backgroundImage: 'url('+imgurl+')'}">
+						
+					</li>
+				</ul>-->
+				<ul class="askbar">
+					<li>
+						<span class="bar-span borderRight">
+							<img src="../images/share-icon.png" class="bar_icon" />{{detailData.share_num}}
+						</span>
+					</li>
+					<li>
+						<span class="bar-span borderRight">
+							<img src="../images/msp-icon.png" class="bar_icon" />{{detailData.comment_num}}
+						</span>
+					</li>
+					<li>
+						<span class="bar-span">
+						<img src="../images/zan-icon.png" class="bar_icon" />{{detailData.like_num}}
+						</span>
+					</li>
+				</ul>
+			</div>
+			<div class="margin-blo"></div>
+			<div class="ansout" v-if="comments_con.length>0">
+				<div class="ansBlo webkBlo" v-for="(item,index) in comments_con">
+					<img :src="item.reply_user_logo" class="anshead"/>
+					<div class="ansright webInp">
+						<p class="ansname">{{item.reply_user_nickname}}<span class="zanspan">{{item.like_num}}<img src="../images/zan-icon.png"/></span></p>
+						<p class="anstime">{{item.create_time}}</p>
+						<p class="ansnow">{{item.content}}</p>
+						<p class="ansdetail" v-if="item.child_list.length>0" v-for="(apply,index) in item.child_list">
+							<span class="name">{{apply.reply_user_nickname}}</span>回复:
+							<span class="apply">{{apply.content}}</span>
+							<span v-if="item.child_list.length>0" class="seeMore">查看更多回复>></span>
+						</p>
+						
+						<img v-if="item.is_adopt==1" src="../images/adopt.png" class="adopt"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		 <script src="../js/zepto.js"></script>
+		<script src="../js/common.js"></script>
+		<script src="../js/vue.js"></script>
+		<script src="../js/vue-resource.js"></script>
+		<script>
+				window.onload = function() {
+			new Vue({
+				el: '#vuebody',
+				data: {
+					detailData:{},
+					ask_img: "",
+					comments_con:{},
+					img_length:""
+				},
+				methods: {
+					getCourseList: function (){
+						let parm={"knowledge_id":idNum};    
+							this.$http({           
+								method:'POST',
+								url:jieUrl+"421",
+								params:parm
+							}).then(function(response){  
+								 this.detailData=response.data.d;
+								 console.log(this.detailData)
+								 this.ask_img = (this.detailData.img_urls).split(',');
+								 this.img_length = this.ask_img.length;
+								 for(let i=0;i<this.ask_img.length;i++){
+									 if(this.ask_img[i].indexOf('http')<0){
+								 		this.ask_img[i] = imgUrl + this.ask_img[i];
+								 	}
+								 }
+								 
+							},function(error){
+								alert('请求失败')
+							});
+					},
+					comments: function(){
+						let parm={"knowledge_id":idNum,"page":1,"page_size":4};    
+							this.$http({           
+								method:'POST',
+								url:jieUrl+"423",
+								params:parm
+							}).then(function(response){  
+								 this.comments_con=response.data.d;
+							},function(error){
+								alert('请求失败')
+							});
+					},
+					outlink: function(){
+						if(hasPlus<0){
+							window.location.href=andAppUrl; 
+						}
+					},
+					 errorImg: function(){
+			          	/*如果图片加载失败则用默认头像*/
+					    	$('img').error(function(){
+								$('this').attr("src","../images/default.png");
+							});
+			          }
+				},
+				created: function(){
+					this.getCourseList();
+					this.errorImg();
+					this.comments();
+				}
+				});
+			}
+			</script>
+	</body>
+</html>

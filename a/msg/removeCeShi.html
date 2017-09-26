@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta content="telephone=no" name="format-detection">
+        <meta name="wap-font-scale" content="no">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+	document.write("用户代理: " + navigator.userAgent);
+	var nav=navigator.userAgent;
+	console.log(nav.indexOf("Mozilla"))
+	
+function GetQueryString(name)
+{
+     var reg = new RegExp("(^|&)"+ name +"/([^&]*)(&|$)");
+     var r = navigator.userAgent.search.substr(1).match(reg);
+     if(r!=null)return  unescape(r[2]); return null;
+}
+ 
+// 调用方法
+alert(GetQueryString("Mozilla"));
+	</script>
+</html>

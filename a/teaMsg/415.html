@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="wap-font-scale" content="no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>租教室</title>
+    <link href="../css/index.css?+Math.random()" rel="stylesheet">
+    <!--<link rel="stylesheet" href="../css/swiper-3.4.0.min.css?+Math.random()">-->
+    <link href="../css/scrollbar.css" rel="stylesheet">
+    
+    <body class="marginNone padBottom20 theBody">
+    	<!--轮播图-->
+      <!--<div class="swiper-container">
+        <div class="swiper-wrapper" id="banner">
+	  
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>-->
+      <div class="mainContent actBlo">
+        <div class="mainContent marginBody leftRight">
+				<!--视频下方-->
+				<p class="titleKe color333 marBottom7 marTop10" id="classRoom"></p>
+				<p class="redFont price" id="price">￥50/小时</p>
+        <div class="tabBlock">
+            <div class="tabContent">
+                <div class="tabCon ">
+                    <div class="padLeftRight padBottom20">
+                    <p class="title color2C size14 marBottom10 padTop20">教室简介</p>
+										  <div class="webkBlo marBottom10">
+										    <p class="jiaoFa marRight9" id="roomImg">
+										      <img src=""/></p>
+										    <div class="webInp">
+										      <div class="color333 size12 marBottom7 overHide" id="nickName">
+										      </div>
+										      <p class="color999" id="roomName"></p></div>
+										  </div>
+										  <div class="shiDet">
+										  	<p class="size12 color999 hasBig" id="jiaoType">教室类型：<span></span></p>
+                    	<p class="size12 color999 hasBig" id="saveNum">可容纳人数：<span></span></p>
+                    	<p class="size12 color999 hasBig" id="mianJi">教室面积：<span></span></p>
+                    	<p class="size12 color999 hasBig" id="sheBei">教室设备：<span></span></span></p>
+                      <p class="size12 color999 hasBig" id="address">教室地址：<span></span></p>
+                      <p class="size12 color999 hasBig" >退订政策：<span>开课日期前退订教室，全额退款，开课当天退订教室，扣除50%金额。</span></p>
+                      <p class="size12 color999 hasBig" id="shuoMing">详情说明：<span></p>
+										  </div>
+                    	
+                    </div>
+                </div>
+                <div class="tabCon disNone padLeftRight">
+                    	<p class="title color2C size13 padTop20 marBottom10">
+           					<span class="greyFont size12">综合评分</span><span id="score"></span>
+                    	</p>
+                    	<div class="lunRelative">
+										<div id="wrapper">
+										<div id="scroller" >
+											<div id="pullDown" style="overflow: hidden;">
+												<span class="pullDownIcon"></span><span class="pullDownLabel">下拉刷新...</span>
+											</div>
+											<div id="pingLun"></div>
+											<div id="pullUp" class="pullUp" style="overflow: hidden;">
+												<span class="pullUpIcon"></span><span class="pullUpLabel"></span>
+											</div>
+										</div>
+										</div>
+									</div>
+                </div>
+            </div>
+        </div>
+			</div>
+      </div>
+      <script src="../js/zepto.js"></script>
+      <!--<script src="../js/swiper-3.4.0.jquery.min.js"></script>-->
+      <script src="../js/iscroll.js"></script>
+			<script src="../js/iscroll4.2.5.js"></script>
+			<script src="../js/startScore.js"></script>
+			<script src="../js/common.js?+Math.random()"></script>
+     <script>
+      !(function($) {
+      	var g = {
+                init: function() {
+                    var _t = this;
+                    //调用tab
+                    _t.tab();
+                    /*详情*/
+                   _t.keDetail();
+                     },
+                     tab:function(){
+                     	var _t=this;
+                        $(".tabUl li").each(function(index, element) {
+                            var i = index;
+                            $(this).css("width","50%");
+                            $(this).on('click',
+                            function() {
+                                $(".tabUl li").removeClass("active");
+                                $(this).addClass("active");
+                                $(".tabContent .tabCon").hide();
+                                $(".tabContent .tabCon").eq(i).show();
+
+                            });
+                        });
+                     },
+                     /*租教室详情*/
+                    keDetail: function() {
+                        var _t = this;
+                        //通过链接获取id
+                        var url=location.search; 
+													if(url.indexOf("?")!=-1) 
+													{
+														function GetQueryString(name)
+														{
+														     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+														     var r = window.location.search.substr(1).match(reg);
+														     if(r!=null)return  unescape(r[2]); return null;
+														}
+														GetQueryString("id");
+														var idNum=GetQueryString("id");
+														var userId=GetQueryString("user_id");
+														var relaId=idNum;
+														var uId=userId;
+														var parm={"id":idNum,"user_id":userId};
+														}
+														else{
+															var parm={"id":1,"user_id":1};
+															var relaId=1;
+															var uId=1;
+														}
+                        $.ajax({
+                            type: 'POST',
+                            url: jieUrl+'100425',
+                            data: parm,
+                            headers:{ut:tokenData},
+                            dataType: 'json',
+                            success: function(data) {
+                            	var data=data.d;
+                            	var roomType=data.type;
+                            	if(roomType==1){
+                            		$("#jiaoType span").html("多媒体教室");
+                            	}else if(roomType==2){
+                            		$("#jiaoType span").html("舞蹈教室");
+                            	}else if(roomType==3){
+                            		$("#jiaoType span").html("一对一");
+                            	}else if(roomType==4){
+                            		$("#jiaoType span").html("美术教室");
+                            	}else if(roomType==5){
+                            		$("#jiaoType span").html("音乐教室");
+                            	}else if(roomType==6){
+                            		$("#jiaoType span").html("工作室");
+                            	}else if(roomType==7){
+                            		$("#jiaoType span").html("活动会议室");
+                            	}else if(roomType==8){
+                            		$("#jiaoType span").html("书法教室");
+                            	}else{
+                            		$("#jiaoType span").html("法教");
+                            	}
+                            	
+//                          	var sheMarry=new Array();
+//                          	sheMarry=["WIFI","话筒","多媒体","电脑","投影仪","影子"]
+//                          	var sheBei=data.device;
+//                          	var sheStr=sheBei.split(",");
+//                          	var sheCon="";
+//                          	for(i=1;i<sheStr.length+1;i++){
+//                          		sheCon+=""+sheMarry[i]+" ";
+//                          	}
+                            	$("#saveNum span").html(data.people_num+"人");
+                            	$("#mianJi span").html(data.acreage+"m²");
+                            	$("#sheBei span").html(data.device);
+                            	$("#address span").html(data.address);
+                            	$("#classRoom").html(data.title);
+                            	$("#shuoMing span").html(data.detail);
+                            	$("#roomImg img").attr("src",data.teacher_imgurl);
+                            	$("#price").html(data.fee+"元/小时");
+                            	$("#roomName").html(data.detail);
+                            	$("#nickName").html(data.nickname);
+//                          	var imgStr=(data.album_url).split(",");
+//                          	var banner="";
+//                          	for(j=0;j<imgStr.length;j++){
+//                          		banner+="<div class='swiper-slide' style='background-image:url("+imgStr[j]+");height: 6.047619rem;'></div>";
+//                          		//banner+="<div class='swiper-slide' style='background-image:url("+imgStr[j]+");height: 6.047619rem;'></div>";
+//                          	}
+//                          	$("#banner").html(banner);
+//                          	var mySwiper = new Swiper('.swiper-container', {
+//											          direction: 'horizontal',
+//											          loop: true,
+//											          pagination: '.swiper-pagination',
+//											          observer:true,
+//											          observeParents:true,
+//											          autoplay: 3000,
+//											          autoplayDisableOnInteraction : false,
+//											          longSwipesRatio : 0.1
+//											       });
+											       $('img').error(function(){
+																    $(this).attr("src","../images/default.png");
+																});
+                            }
+                         });
+                                
+                   }
+                    }
+               $(function() {
+                    g.init();
+                });
+      })($);
+      </script>
+    
+    </body>
+
+</html>

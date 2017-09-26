@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="wap-font-scale" content="no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>活动详情</title>
+    <link href="../css/index.css" rel="stylesheet"></head>
+  
+  <body>
+    <div class="mainContent">
+      <div class="marginBody detailBlock">
+        <h4 class="blueFont size32 marBottom10">你是以下这样吗？</h4>
+        <p class="greyFont size13 marBottom10 linHeight18">
+        令人称道的贤内助、能周到待客？<br />
+        懂得待客之细节、女主人礼仪？<br />
+        懂得家宴、派对如何着装，如何沟通？<br />
+        社交商务场合游刃有余、信心满满？<br />
+        能打造令人过目不忘的第一印象、给你的职场加分?
+        </p>
+        <h4 class="blueFont size32 marBottom10">你是以下这样吗？</h4>
+        <p class="greyFont size13 marBottom10 linHeight18">
+        令人称道的贤内助、能周到待客？<br />
+        懂得待客之细节、女主人礼仪？<br />
+        懂得家宴、派对如何着装，如何沟通？<br />
+        社交商务场合游刃有余、信心满满？<br />
+        能打造令人过目不忘的第一印象、给你的职场加分?
+        </p>
+      </div>
+      <h4 class="blueFont size32 marBottom10 marginBody">课程安排</h4>
+      <div class="sourceBlock marginBody">
+        <p class="font333 weekDay">7.16（周六）</p>
+        <p class="greyFont size13 marBottom10 linHeight18">上午：淑媛家庭宴客课程
+          <br />下午：西餐礼仪课程</p>
+        <p class="font333 weekDay">7.16（周六）</p>
+        <p class="greyFont size13 marBottom10 linHeight18">上午：淑媛家庭宴客课程
+          <br />下午：西餐礼仪课程</p></div>
+    </div>
+    <script src="../js/zepto.min.js"></script>
+    <!--<script src="../js/jquery-3.1.1.min.js"></script>-->
+    <!--<script src="../js/jquery.jsonp.js"></script>-->
+    <script>!
+      function($) {
+        var g = {
+          init: function() {
+            var _t = this;
+            _t.getDetail();
+          },
+          getDetail: function() {
+            var _t = this;
+            /*var param = '{"id":1,"c":1,"info":"","d":{"keyword":"","theme":1,"page":1,"page_size":10,}}';*/
+            /*var param = '{"id":1,"c":1,"info":"","d":{"user_id":""}}';*/
+            $.ajax({
+              type: 'POST',
+              url: 'http://192.168.3.222:8081/msg/100',
+              data: {},
+              dataType: 'json',
+              success: function(data) {
+              $.each(data.d, function(key, activity){
+			  			console.log(activity)
+			})
+
+              },
+              error: function(xhr, type) {
+                console.info("服务器出错");
+              }
+            })
+
+          }
+        };
+        $(function() {
+          g.init();
+        });
+      } (Zepto);
+
+     
+      </script>
+  </body>
+
+</html>

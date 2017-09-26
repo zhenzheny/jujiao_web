@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /> 
+  <meta name="apple-mobile-web-app-capable" content="yes" /> 
+  <meta content="telephone=no" name="format-detection" /> 
+  <meta name="wap-font-scale" content="no" /> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <title></title> 
+  <style type="text/css">
+        .videoPlayer{
+           
+            width:100%;
+        }
+        #video{
+            margin-top: 0px;
+        }
+        #videoControls{
+            width: 100%;
+            margin-top: 0px;
+        }
+        .show{
+            opacity: 1;
+        }
+        .hide{
+            opacity: 0;
+        }
+        #progressWrap{
+            background-color: black;
+            height: 25px;
+            cursor: pointer;
+        }
+        #playProgress{
+            background-color: red;
+            width: 0px;
+            height: 25px;
+            border-right: 2px solid blue;
+        }
+        #showProgress{
+            background-color: ;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 25px;
+        }
+        video::-webkit-media-controls-play-button {-webkit-appearance:none;background-color: red;}
+    </style> 
+ </head> 
+ <body> 
+  	
+	<div id="video" class='video' style="height: 160px;">
+		<div id='video-container' style="height: 160px;"></div>
+	</div>
+	<script>
+		var courseInfo = {"id":"78","name":"\u5f3a\u529bdjango+\u6740\u624b\u7ea7xadmin  \u6253\u9020\u4e0a\u7ebf\u6807\u51c6\u7684\u5728\u7ebf\u6559\u80b2\u5e73\u53f0","blur_pic":"http:\/\/szimg.mukewang.com\/5859ed7c00013bec20000520.jpg","duration":"25\u5c0f\u65f6","easy_type":"\u4e2d\u7ea7","comment_score":"10.0","price":"369.00","cat_id":"19","numbers":"22","comment_num":"0","video_id":"2358","finished":"0","start_time":"1482249600","end_time":"1577721600","max_learning_user_num":"1000000","video_pic":"http:\/\/szimg.mukewang.com\/5859ed86000199f509000500-280-160.jpg","wap_pic":"http:\/\/szimg.mukewang.com\/5859ed900001b9da05400300.jpg","short_description":"\u5168\u9762\u638c\u63e1django\u6846\u67b6,\u8f7b\u677e\u5e94\u5bf9python web\u5f00\u53d1\u5de5\u4f5c","status":"3","cat_name":"Python","video_url":"http:\/\/szv1.mukewang.com\/585b47cbe420e542708b457d\/H.mp4","study_duration":1105,"before_start":0,"show_price":{"show_price":1,"price":"369.00","show_discount_price":0,"discount_price":null}}
+		courseInfo.video_url = 'http://szv1.mukewang.com/585b47cbe420e542708b457d/H.mp4';
+		courseInfo.video_img = 'http://szimg.mukewang.com/5859ed86000199f509000500-280-160.jpg';
+		//courseInfo.video_url = 'http://video.mukewang.com/mk.mp4';
+	</script>
+  <script src="../../js/zepto.min.js"></script> 
+  <script src="../../js/webjwplayer.js"></script>
+  <script>
+		
+	</script>  
+ </body>
+</html>

@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <title>测试测试测试</title>
+        <meta content="" name="Keywords">
+        <meta content="" name="Description">
+        <meta name="format-detection" content="telephone=no">
+    </head>
+    <body>
+        <div id="mediaplayer"></div>
+        <input type="button" class="player-play" value="播放"/>
+        <input type="button" class="player-stop" value="停止"/>
+        <input type="button" class="player-status" value="取得状态"/>
+        <input type="button" class="player-current" value="当前播放秒数"/>
+        <input type="button" class="player-goto" value="转到第30秒播放"/>
+        <input type="button" class="player-length" value="视频时长(秒)"/>
+        <input type="button" class="next" value="下一章"/>
+        <script src="../jwplayer/jquery-3.1.1.min.js"></script>
+        <script src="../jwplayer/jwplayer.js"></script>
+        <script src="../jwplayer/jwpsrv.js"></script>
+        <script src="../js/common.js"></script>
+        <!--<script type="text/javascript">
+		jwplayer('mediaplayer').setup({
+		    'flashplayer': 'jwplayer/jwplayer.flash.swf',
+			'image': 'http://assets.jq22.com/plugin/2016-04-25-11-04-36.jpg',
+		    'id': 'playerID',
+		    'width': '100%',
+			'aspectratio':'10:6',
+		    'file': 'http://jq22com.qiniudn.com/jq22com.mp4'
+		  });
+		</script>-->
+        <script type="text/javascript">
+	 	var url=location.search; 
+			if(url.indexOf("?")!=-1) 
+			{
+				function GetQueryString(name)
+				{
+				     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+				     var r = window.location.search.substr(1).match(reg);
+				     if(r!=null)return  unescape(r[2]); return null;
+				}
+				GetQueryString("id");
+				var idNum=GetQueryString("id");
+				var userId=GetQueryString("user_id");
+				var relaId=idNum;
+				var uId=userId;
+				var parm={"id":idNum,"user_id":userId};
+				}
+				else{
+					var parm={"id":1,"user_id":1};
+					var relaId=1;
+					var uId=1;
+				}
+							$.ajax({
+				              type: 'POST',
+				              url: jieUrl+'1012',
+				              data:parm,
+				              headers:{ut:tokenData},
+				              dataType: 'json',
+				              success: function(data) {
+						              	//console.log(data.d)
+						              	var jsondata=data.d;
+						              	var list=[];
+						              	for(i=0;i<jsondata.length;i++){
+						              		list[i]={duration:i, file:jsondata[i].url, image:"/uploads/video.jpg"}
+						              	}
+						              	console.log(list)
+						        //       	var list=[
+								      //          { duration : 32 , file : "http://jq22com.qiniudn.com/jq22com.mp4" , image : "/uploads/video.jpg" },
+								      //          { duration : 124 , file : "http://www.runoob.com/try/demo_source/mov_bbb.mp4" , image : "/uploads/bbb.jpg" },
+											   // { duration : 542 , file : "http://jq22com.qiniudn.com/jq22com.mp4" , image : "/uploads/ed.jpg" }
+								      //   	];
+						              	 thePlayer = jwplayer('mediaplayer').setup({  
+								            playlist :list ,
+								            width: 500,  
+								            height: 350,  
+								            dock: false  
+								        });  
+							          $(".next").click(function() { 
+							          	jwplayer(0).playlistItem(1)
+							          });
+							        //播放 暂停  
+							        $('.player-play').click(function() {  
+							            if (thePlayer.getState() != 'PLAYING') {  
+							                thePlayer.play(true);  
+							                this.value = '暂停';  
+							            } else {  
+							                thePlayer.play(false);  
+							                this.value = '播放';  
+							            }  
+							        });  
+							        //停止  
+							        $('.player-stop').click(function() { thePlayer.stop(); });  
+							          
+							        //获取状态  
+							        $('.player-status').click(function() {  
+							            var state = thePlayer.getState();  
+							            var msg;  
+							            switch (state) {  
+							                case 'BUFFERING':  
+							                    msg = '加载中';  
+							                    break;  
+							                case 'PLAYING':  
+							                    msg = '正在播放';  
+							                    break;  
+							                case 'PAUSED':  
+							                    msg = '暂停';  
+							                    break;  
+							                case 'IDLE':  
+							                    msg = '停止';  
+							                    break;  
+							            }  
+							            alert(msg);  
+							        });  
+          
+						        //获取播放进度  
+						        $('.player-current').click(function() { alert(thePlayer.getPosition()); });  
+						  
+						        //跳转到指定位置播放  
+						        $('.player-goto').click(function() {  
+						            if (thePlayer.getState() != 'PLAYING') {    //若当前未播放，先启动播放器  
+						                thePlayer.play();  
+						            }  
+						            thePlayer.seek(30); //从指定位置开始播放(单位：秒)  
+						        });  
+						          
+						        //获取视频长度  
+						        $('.player-length').click(function() { alert(thePlayer.getDuration()); });  
+									              },
+									              error: function(xhr, type) {
+									                console.info("服务器出错");
+									              }
+									          })
+						   		 //var thePlayer;  //保存当前播放器以便操作  
+							    $(function() {  
+							       
+							    });  
+
+        </script>
+    </body>
+</html>
