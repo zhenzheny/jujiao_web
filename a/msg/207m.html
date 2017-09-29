@@ -276,16 +276,14 @@
 								/*老师详情*/
 								var teacherDetail="<img src='"+(data.league_logo==null?data.teacher_img_url:data.league_logo)+"'/>";
 								$(".teacherImg").html(teacherDetail);
-								var teacherDetail1="<p>"+data.lecturer+(data.ide_name==null ?"":data.ide_name)+"</p><p class='organization'>"+(data.league_name==null?"":data.league_name)+"</p>";
+								var teacherDetail1="<div><span>"+data.lecturer+(data.ide_name==null ?"":data.ide_name)+"</span><img class='groupSchool' src='../images/groupschool_details_isjudge.png'></div><p class='organization'>"+(data.league_name==null?"":data.league_name)+"</p>";
 								$(".teachIntro").html(teacherDetail1);
-                                var courseDetail="<p class='title color2C size13 padTop20 marBottom7'>课程须知</p>"+
-						            "<p class='xuzhiP size13 color999'>"+data.notice+"</p>"+
-						            "<p class='title color2C size13 padTop20 marBottom7'>老师能告诉你学到什么？</p>";
+                                var courseDetail;
 								/*课程须知*/
 								var detailList=data.caption;
 								var detailArr=detailList.split("，");
 								for(i=0;i<detailArr.length;i++){
-									courseDetail+="<p class='xuzhiP size13 color999'>"+detailArr[i]+"</p>";
+									courseDetail="<p class='xuzhiP size13 color999'>"+detailArr[i]+"</p>";
 								}
 								$("#corseXuZhi").html(courseDetail);
 	                           if(hasPlus>-1){
@@ -338,7 +336,7 @@
                            		_t.directory();
 	                           	var hideCon="<div class='hideVideo'><div>";
 	                           	$("#vjs_video_3").before(hideCon);
-	                           	$(".hideVideo,#vedioPrice,#jiGouCon").on('click',function(){
+	                           	$(".hideVideo,#vedioPrice,#jiGouCon,#pingLun,.video-slider,#MuluId").on('click',function(){
 	                           		downLoad();
 	                           	});
 	                           	function downLoad(){
@@ -470,9 +468,9 @@
 						       function checkdirectory(){
 						       		var playadd=$(".jwvideo video").attr("src");
 						       		var firstadd=list[0].sources[0].file;
-						       		if(playadd == firstadd){
-						       			$("#MuluId .webkBlo").eq(0).addClass("active");
-						       		}
+//						       		if(playadd == firstadd){
+//						       			$("#MuluId .webkBlo").eq(0).addClass("active");
+//						       		}
 						       }
 			              	$("#MuluId .keCheng").each(function(index,element){
 			              		$(this).on('click',function(){
@@ -549,8 +547,29 @@
 	                                muLuCon += "</div>";
 	                                $("#MuluId").html(muLuCon);
 				              	}
-
-							var  videoList="<video id='my_video'><source></video><div class='controller' id='controller'><div class='start icon'> &#xe672;</div> <div class='progress'><div class='inner'></div></div><div class='fullscreen icon' id='fullScreenBtn'>&#xe643;</div></div>";
+							var videoList;
+                            if(hasPlus>-1){
+								if(isAndroid==1){
+									videoList="<video id='my_video' style='height: 100%'><source  controls='controls' ></video><div class='controller' id='controller'><div class='start icon'> &#xe672;</div> <div class='progress'><div class='inner'></div></div><div class='fullscreen icon' id='fullScreenBtn'>&#xe643;</div></div>";
+								}else if(isiOS==1){
+										videoList="<video id='my_video' style='height: 100%'><source  controls='controls'></video><div class='controller' id='controller'><div class='start icon'> &#xe672;</div> <div class='progress'><div class='inner'></div></div><div class='fullscreen icon' id='fullScreenBtn'>&#xe643;</div></div>";
+								}
+								$(".imgbtn").on('click',function() {
+									var first=$(".keCheng li").eq(1).children("a").attr("data-id");
+									$(this).parent().css("display","none");
+									$(this).parent().next().html(videoList).children("video").children("source").attr("src",first);})
+								$('.keCheng li').on('click', function() {
+									var srcName = $(this).children("a").attr("data-id");
+									$("#mediaplayer").html(videoList).children("video").children("source").attr("src", srcName);
+									$(".video-slider").css("display", "none");
+								})
+								$('.keCheng .title').on('click', function () {
+									var srcName = $(this).siblings("li").children("a").attr("data-id");
+									$("#mediaplayer").html(videoList).children("video").children("source").attr("src", srcName);
+									$(".video-slider").css("display", "none");
+								})
+							}else{
+								videoList="<video id='my_video'><source></video><div class='controller' id='controller'><div class='start icon'> &#xe672;</div> <div class='progress'><div class='inner'></div></div><div class='fullscreen icon' id='fullScreenBtn'>&#xe643;</div></div>";
 								//反射調用
 								var invokeFieldOrMethod = function(element, method)
 								{
@@ -625,34 +644,34 @@
 										document.IsFullScreen = false;
 									}
 								}
-							$(".imgbtn").on('click',function() {
-							    var first=$(".keCheng li").eq(1).children("a").attr("data-id");
-								$(this).parent().css("display","none");
-								$(this).parent().next().html(videoList).children("video").children("source").attr("src",first);
+								$(".imgbtn").on('click',function() {
+									var first=$(".keCheng li").eq(1).children("a").attr("data-id");
+									$(this).parent().css("display","none");
+									$(this).parent().next().html(videoList).children("video").children("source").attr("src",first);
 
-								var startbtn=$(".start.icon").eq(0);
-								$("#my_video")[0].play()
-								var startflag=true;
-								startbtn.on('click',function () {//开始暂停
-									if(startflag){
-										$("#my_video")[0].pause()
-										startbtn.html("&#xe609;");
-									}else{
-										$("#my_video")[0].play();
-										startbtn.html("&#xe672;");
+									var startbtn=$(".start.icon").eq(0);
+									$("#my_video")[0].play()
+									var startflag=true;
+									startbtn.on('click',function () {//开始暂停
+										if(startflag){
+											$("#my_video")[0].pause()
+											startbtn.html("&#xe609;");
+										}else{
+											$("#my_video")[0].play();
+											startbtn.html("&#xe672;");
+										}
+										startflag=!startflag;
+									})
+									var duration=0;
+									var now=0;
+									$("#my_video")[0].oncanplay=function () {//能够播放时
+										duration=$("#my_video")[0].duration;//总时长
 									}
-									startflag=!startflag;
-								})
-								var duration=0;
-								var now=0;
-								$("#my_video")[0].oncanplay=function () {//能够播放时
-									duration=$("#my_video")[0].duration;//总时长
-								}
-								$("#my_video")[0].ontimeupdate=function () {
-									now=$("#my_video")[0].currentTime;//当前时长
-									var width=now/duration;//时长转换为长度
-									$(".inner").css("width",width*100+"%");
-								}
+									$("#my_video")[0].ontimeupdate=function () {
+										now=$("#my_video")[0].currentTime;//当前时长
+										var width=now/duration;//时长转换为长度
+										$(".inner").css("width",width*100+"%");
+									}
 //								//滚动条
 //								var progress=$(".progress");
 //								var video=$("#my_video")[0];
@@ -674,52 +693,52 @@
 //										document.onmouseup=null;
 //									},false)
 //								})
-								document.getElementById('fullScreenBtn').addEventListener('click', function () {
-									launchFullscreen(document.getElementById('my_video'));
-								}, false);
-								setTimeout(function(){$("#controller").css("opacity","0");},4000);
-								$("#my_video").on('click',function(){
-									$("#controller").css("opacity","1");
+									document.getElementById('fullScreenBtn').addEventListener('click', function () {
+										launchFullscreen(document.getElementById('my_video'));
+									}, false);
 									setTimeout(function(){$("#controller").css("opacity","0");},4000);
-								});
-							})
-							$('.keCheng li').on('click', function() {
-								var srcName = $(this).children("a").attr("data-id");
-								$("#mediaplayer").html(videoList).children("video").children("source").attr("src", srcName);
-								$(".video-slider").css("display", "none");
-								var startbtn = $(".start.icon").eq(0);
-								$("#my_video").get(0).play();
-								var startflag = true;
-								startbtn.on('click', function () {//开始暂停
-									if(startflag){
-										$("#my_video")[0].pause()
-										startbtn.html("&#xe609;");
-									}else{
-										$("#my_video")[0].play();
-										startbtn.html("&#xe672;");
+									$("#my_video").on('click',function(){
+										$("#controller").css("opacity","1");
+										setTimeout(function(){$("#controller").css("opacity","0");},4000);
+									});
+								})
+								$('.keCheng li').on('click', function() {
+									var srcName = $(this).children("a").attr("data-id");
+									$("#mediaplayer").html(videoList).children("video").children("source").attr("src", srcName);
+									$(".video-slider").css("display", "none");
+									var startbtn = $(".start.icon").eq(0);
+									$("#my_video").get(0).play();
+									var startflag = true;
+									startbtn.on('click', function () {//开始暂停
+										if(startflag){
+											$("#my_video")[0].pause()
+											startbtn.html("&#xe609;");
+										}else{
+											$("#my_video")[0].play();
+											startbtn.html("&#xe672;");
+										}
+										startflag = !startflag;
+									})
+									var duration = 0;
+									var now = 0;
+									$("#my_video")[0].oncanplay = function () {//能够播放时
+										duration = $("#my_video")[0].duration;//总时长
 									}
-									startflag = !startflag;
-								})
-								var duration = 0;
-								var now = 0;
-								$("#my_video")[0].oncanplay = function () {//能够播放时
-									duration = $("#my_video")[0].duration;//总时长
-								}
-								$("#my_video")[0].ontimeupdate = function () {
-									now = $("#my_video")[0].currentTime;//当前时长
-									var width = now / duration;//时长转换为长度
-									$(".inner").css("width", width * 100 + "%");
-								}
-								document.getElementById('fullScreenBtn').addEventListener('click', function () {
-									launchFullscreen(document.getElementById('my_video'));
-								}, false);
-								setTimeout(function(){$("#controller").css("opacity","0");},4000);
-								$("#my_video").on('click',function(){
-									$("#controller").css("opacity","1");
+									$("#my_video")[0].ontimeupdate = function () {
+										now = $("#my_video")[0].currentTime;//当前时长
+										var width = now / duration;//时长转换为长度
+										$(".inner").css("width", width * 100 + "%");
+									}
+									document.getElementById('fullScreenBtn').addEventListener('click', function () {
+										launchFullscreen(document.getElementById('my_video'));
+									}, false);
 									setTimeout(function(){$("#controller").css("opacity","0");},4000);
+									$("#my_video").on('click',function(){
+										$("#controller").css("opacity","1");
+										setTimeout(function(){$("#controller").css("opacity","0");},4000);
+									})
 								})
-							})
-							$('.keCheng .title').on('click', function () {
+								$('.keCheng .title').on('click', function () {
 									var srcName = $(this).siblings("li").children("a").attr("data-id");
 									$("#mediaplayer").html(videoList).children("video").children("source").attr("src", srcName);
 									$(".video-slider").css("display", "none");
@@ -750,12 +769,13 @@
 									document.getElementById('fullScreenBtn').addEventListener('click', function () {
 										launchFullscreen(document.getElementById('my_video'));
 									}, false);
-								    setTimeout(function(){$("#controller").css("opacity","0");},4000);
-								$("#my_video").on('click',function(){
-									$("#controller").css("opacity","1");
 									setTimeout(function(){$("#controller").css("opacity","0");},4000);
+									$("#my_video").on('click',function(){
+										$("#controller").css("opacity","1");
+										setTimeout(function(){$("#controller").css("opacity","0");},4000);
+									})
 								})
-								})
+							}
 						},
                             error: function(xhr, type) {
                                 console.info("服务器出错");

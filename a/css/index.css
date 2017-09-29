@@ -1,11 +1,11 @@
 html{font-size:50px;}
 html {
--webkit-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 body{
-	font-family: Arial, Helvetica, STHeiTi, sans-serif;
-	min-width: 320px;
-	font-weight: normal;
+    font-family: Arial, Helvetica, STHeiTi, sans-serif;
+    min-width: 320px;
+    font-weight: normal;
     padding: constant(safe-area-inset-top) constant(safe-area-inset-right) constant(safe-area-inset-bottom) constant(safe-area-inset-left);
 }
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td, section, article, aside, header, footer, nav, dialog, figure, hgroup {
@@ -23,10 +23,10 @@ ul, ol, li {
 }
 input, button, select, textarea {
     outline: none;border:none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);    
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-   -webkit-user-modify: read-write-plaintext-only;
-   box-shadow: none;
+    -webkit-user-modify: read-write-plaintext-only;
+    box-shadow: none;
 }
 input:focus {outline: none;border:none;}
 * {
@@ -77,8 +77,8 @@ input:focus {outline: none;border:none;}
     body{font-size:24px;}
 }*/
 a{
-	text-decoration: none;
-	color: #808080;
+    text-decoration: none;
+    color: #808080;
 }
 .theBody{
     max-width: 640px;
@@ -86,58 +86,58 @@ a{
 }
 /*creat by fcyTang start*/
 .font666{
-	color: #666;
+    color: #666;
 }
 .font333{
-	color: #333;
+    color: #333;
 }
 .size32{
-	font-size:0.666667rem;
+    font-size:0.666667rem;
 }
 .blueFont{
-	color: #3a62fa!important;
+    color: #3a62fa!important;
 }
 .greyFont{
-	color: #666666;
+    color: #666666;
 }
 .padBody{
-	margin: 0.714286rem;
+    margin: 0.714286rem;
 }
 .size13{
-	font-size: 0.619048rem;
+    font-size: 0.619048rem;
 }
 .marBottom10{
-	margin-bottom: 13px;
+    margin-bottom: 13px;
 }
 .linHeight18{
-	line-height: 0.857143rem;
+    line-height: 0.857143rem;
 }
 .heightAll{
-	height: 100%;
+    height: 100%;
 }
 .scrollY{
-	    overflow-y: scroll;
+    overflow-y: scroll;
 }
 .marginBody{
-	margin: 0.714286rem;
+    margin: 0.714286rem;
 }
 .marBottom7{
-	margin-bottom: 7px
+    margin-bottom: 7px
 }
 .marBottom15{
-	margin-bottom: 15px!important;
+    margin-bottom: 15px!important;
 }
 .marBottom20{
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 .videoBlock{
-	position: relative;
-	height: 7.142857rem;
+    position: relative;
+    height: 7.142857rem;
     overflow: hidden;
     z-index: 10;
 }
 .marginNone{
-	margin: 0;
+    margin: 0;
 }
 .leftRight{
     margin:0 0.714286rem;
@@ -156,7 +156,7 @@ a{
     font-size: 0.571429rem;
 }
 .redFont{
-	color:#cb3332 ;
+    color:#cb3332 ;
 }
 .price{
     font-size: 0.614286rem;
@@ -167,18 +167,18 @@ a{
     vertical-align: middle;
 }
 .price .greyFont{
-	font-size: 12px;
+    font-size: 12px;
     margin-left: 0.190476rem;
     color: #999!important;
 }
 .borBottom{
     /*border-bottom: 0.005rem solid #ccc;*/
-   /*border-bottom: 1px solid #ccc;*/
-   position: relative;
+    /*border-bottom: 1px solid #ccc;*/
+    position: relative;
 }
 .borderBottom{
-	 position: relative;
-	 padding: 10px;
+    position: relative;
+    padding: 10px;
 }
 .borderBottom:after {
     content: '';
@@ -224,7 +224,7 @@ a{
 }
 .borTop{
     /*border-top: 1px solid #ccc;*/
-   position: relative;
+    position: relative;
 }
 .borTop:before {
     content: '';
@@ -248,6 +248,7 @@ a{
     box-sizing: border-box;
 }
 .padLeftRight{
+    overflow: hidden;
     padding:0  0.714286rem;
 }
 #corseXuZhi p[align=center] img{
@@ -266,7 +267,7 @@ a{
     width: 33%;
 }
 .tabUl .width50Im{
-	width: 50%!important;
+    width: 50%!important;
 }
 .tabUl  li span{
     padding-bottom: 4px;
@@ -293,9 +294,9 @@ a{
     background: none;
 }
 .keCheng .line-time{
-	display: inline-block;
-	float: right;
-	color: #999;
+    display: inline-block;
+    float: right;
+    color: #999;
 }
 .keCheng .title{
     color: #333;
@@ -307,7 +308,7 @@ a{
 }
 
 .keCheng li{
-	word-break: break-all;
+    word-break: break-all;
     word-wrap: break-word;
     color: #999;
     min-height: 0.952381rem;
@@ -318,16 +319,16 @@ a{
     color: #3b62fb;
 }
 .webkBlo .videoBiao{
-	padding: 2px 4px;
-	border-radius: 4px;
-	color: #666666;
-	display: inline-block;
-	border: 1px solid #666666;
-	font-size: 12px;
-	-moz-transform:scale(0.8,0.8); 
-	-webkit-transform:scale(0.8,0.8); 
-	-o-transform:scale(0.8,0.8); 
-	transform:scale(0.8,0.8); 
+    padding: 2px 4px;
+    border-radius: 4px;
+    color: #666666;
+    display: inline-block;
+    border: 1px solid #666666;
+    font-size: 12px;
+    -moz-transform:scale(0.8,0.8);
+    -webkit-transform:scale(0.8,0.8);
+    -o-transform:scale(0.8,0.8);
+    transform:scale(0.8,0.8);
 }
 .newMuLu .greyPoint{
     background: #cccccc;
@@ -348,8 +349,9 @@ a{
     left: -0.166667rem;
     top: 0.3rem;
     display: block;
-    }
+}
 .disNone{
+    overflow: hidden;
     display: none;
 }
 .videoBlock,.videoBlock .video-js,.video-js .vjs-tech{
@@ -385,13 +387,29 @@ a{
     font-size: 0.5rem;
     padding:0.2rem 0;
 }
+.teacherMes .teachIntro div{
+    margin-bottom: 0.24rem;
+    font-size: 14px;
+    float: left;
+}
+.teacherMes .teachIntro div span{
+    float: left;
+}
+.teacherMes .teachIntro div img{
+    width: 0.6rem;
+    height: 0.6rem;
+    float: left;
+    margin-left: 0.1rem;
+}
+
 .teacherMes .teachIntro p{
+    width: 100%;
+    float: left;
     margin-bottom: 0.24rem;
     font-size: 14px;
 }
 .teacherMes .teachIntro p.organization{
     color: #7a7a7a;
-    fo
 }
 .padBottom20{
     padding-bottom: 0.952381rem;
@@ -418,14 +436,14 @@ a{
     -webkit-box-orient: horizontal;
 }
 .newMuLu{
-	padding-left: 4px!important;
+    padding-left: 4px!important;
 }
 .webInp {
     -webkit-box-flex: 1;
     overflow: hidden;
 }
 .webInp .borderUl{
-	display: none;
+    display: none;
 }
 .disBlock{
     display: block;
@@ -438,7 +456,7 @@ a{
     height: 1.5rem;
 }
 .sn-nav-back, .sn-nav-right {
-    
+
 }
 .sn-nav-back:before {
     content: "";
@@ -465,9 +483,9 @@ a{
     overflow: hidden;
 }
 .agencyImg img{
-     height: 3.095238rem;
+    height: 3.095238rem;
     width: 3.095238rem;
-     border-radius: 3.095238rem;
+    border-radius: 3.095238rem;
     overflow: hidden;
     display: block;
 }
@@ -487,9 +505,9 @@ a{
     font-size:0.61286rem;
     color: #323232;
     width: 68%;
-     overflow:hidden; 
-      white-space:nowrap;
-     text-overflow:ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
 }
 .agencyUl .enterJigou{
     width: 32%;
@@ -537,7 +555,7 @@ a{
 .pingPer{
     height: 1.428571rem;
     width: 1.428571rem;
-   
+
     border-radius: 1.428571rem;
     overflow: hidden;
 }
@@ -555,8 +573,8 @@ a{
 .all>input:nth-of-type(1),
 .all>span:nth-of-type(1){display:none;}
 .all>span{font-size:0.571429rem;color:#cd3333;
-  -webkit-transition:color .8s;
- transition:color .8s;}
+    -webkit-transition:color .8s;
+    transition:color .8s;}
 .all>input+.greySpan{color:#666;}
 .all>input+span{color:#cd3333;}
 .starFen{
@@ -565,13 +583,13 @@ a{
 }
 /*star end*/
 .size10{
-	font-size: 0.5rem;
+    font-size: 0.5rem;
     margin-top: -0.6rem;
 }
 
 #pingLun .greyFont{
-	color: #999;
-	font-size: 0.5rem;
+    color: #999;
+    font-size: 0.5rem;
 }
 .pingCon{
     font-size: 0.56rem;
@@ -588,22 +606,22 @@ a{
     overflow: hidden;
 }
 .agencyImg .guWenPer{
-	position: relative;
-	width: 3.095238rem;
-	/*height: 15px;*/
-	/*padding-left: 0.528571rem;*/
-	font-size: 14px;
-	line-height: 15px;
-	overflow: hidden;
-	white-space: nowrap;
+    position: relative;
+    width: 3.095238rem;
+    /*height: 15px;*/
+    /*padding-left: 0.528571rem;*/
+    font-size: 14px;
+    line-height: 15px;
+    overflow: hidden;
+    white-space: nowrap;
     text-overflow: ellipsis;
     color:#333;
 }
 .agencyImg .guWenPer img{
-	position: absolute;
-	left: 1px;
-	top: 0px;
-	display: none;
+    position: absolute;
+    left: 1px;
+    top: 0px;
+    display: none;
 }
 .guWenPer img{
     vertical-align: middle;
@@ -670,10 +688,10 @@ a{
     border-radius: 0.238095rem;
     overflow: hidden;
     /* border: 1px solid #cd3333;
-    -webkit-box-shadow:0 0 2px rgba(204, 51, 51, .5); 
-  -moz-box-shadow:0 0 2px rgba(204, 51, 51, .5); 
+    -webkit-box-shadow:0 0 2px rgba(204, 51, 51, .5);
+  -moz-box-shadow:0 0 2px rgba(204, 51, 51, .5);
   box-shadow: 0 0 2px rgba(204, 51, 51, .5); */
-  background: #cccccc;
+    background: #cccccc;
 }
 .proP .value{
     display: block;
@@ -709,7 +727,7 @@ a{
     display: inline-block;
     width: 50%;
     white-space:nowrap;
-    overflow:hidden; 
+    overflow:hidden;
     text-overflow:ellipsis;
 }
 .greyborSpan{
@@ -730,7 +748,7 @@ a{
     border-radius: 5px;
 }
 .teaJianJie .selfCon{
-	 border:1px solid #ccc;
+    border:1px solid #ccc;
 }
 /*.selfCon:before {
     content: '';
@@ -794,7 +812,7 @@ a{
 .swiper-container {
     width: 100%;
     height: auto;
-}  
+}
 .swiper-button-prev{
     display: none;
 }
@@ -802,16 +820,16 @@ a{
     display: none;
 }
 .swiper-slide{
-     height: 6.047619rem!important;
-     display: block;
-     width: auto;
-     vertical-align: middle;
-     background-size: cover;
+    height: 6.047619rem!important;
+    display: block;
+    width: auto;
+    vertical-align: middle;
+    background-size: cover;
     background-position: center center;
 }
 .video-slider{
-	height: 8.747619rem;
-	display: block;
+    height: 8.747619rem;
+    display: block;
     width: 100%;
     vertical-align: middle;
     background-size: cover;
@@ -826,7 +844,7 @@ a{
     height: 80%;
 }
 .video-slider>img{
-	display: block;
+    display: block;
     margin: 3.1rem auto;
     width: 2.5rem;
 }
@@ -879,7 +897,7 @@ a{
 }
 .leftTou img{
     vertical-align: middle;
-   height: 0.619048rem;
+    height: 0.619048rem;
     margin-right: 0.142857rem;
 }
 .listBlock .posRelite .txt{
@@ -908,12 +926,12 @@ a{
     display: block;
     height: 1.904762rem;
     line-height: 1.904762rem;
-    white-space:nowrap; 
-    text-overflow:ellipsis; 
-    -o-text-overflow:ellipsis; 
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    -o-text-overflow:ellipsis;
     overflow: hidden;
     font-size: 0.5rem;
-    }
+}
 .jingList .leftTou{
     margin-right: 0.333333rem;
     font-size: 0.58rem;
@@ -933,13 +951,13 @@ a{
 .keList{
     font-size: 0.619048rem;
     overflow: hidden;
-   padding:0.47619rem 0;
-   border-bottom: 1px solid #ccc;
-   color: #999;
-   font-size: 0.619048rem;
+    padding:0.47619rem 0;
+    border-bottom: 1px solid #ccc;
+    color: #999;
+    font-size: 0.619048rem;
 }
 .keList .breakWord{
-	font-size: 0.5rem;
+    font-size: 0.5rem;
 }
 .keList .leftTou{
     color: #333;
@@ -954,7 +972,7 @@ a{
     display: block;
     text-align: right;
     padding-right: 0.714286rem;
-} 
+}
 .shiZiList{
     padding: 0.47619rem 0;
     border-bottom: 1px solid #ccc;
@@ -977,7 +995,7 @@ a{
     font-size: 0.58rem;
 }
 .liu-wrapper{
-	font-size: 0.5rem;
+    font-size: 0.5rem;
 }
 .xiangBlo .detail{
     font-size: 0.5rem;
@@ -1018,7 +1036,7 @@ a{
     position: relative;
 }
 .schoolDat .teaTou{
-     padding-top: 38px;
+    padding-top: 38px;
 }
 
 .teaTou{
@@ -1068,8 +1086,8 @@ a{
     color: #cc3333;
 }
 .keShiUl li{
-     height: 1.142857rem;
-     line-height: 1.142857rem;
+    height: 1.142857rem;
+    line-height: 1.142857rem;
 }
 .xiangUl{
     overflow: hidden;
@@ -1107,7 +1125,7 @@ a{
     height: 1.22381rem;
     width: auto;
     display: block;
-    margin: 0 auto 0.190476rem; 
+    margin: 0 auto 0.190476rem;
 }
 .majorTea{
     font-size: 0.571429rem;
@@ -1130,12 +1148,12 @@ a{
     display: block;
     float: left;
     white-space:nowrap;
-    overflow:hidden; 
+    overflow:hidden;
     text-overflow:ellipsis;
     color: #555;
 }
 .keChengMu .title .active{
-  color: #3b62fb;
+    color: #3b62fb;
 }
 .keChengMu .title .time{
     width: 60%;
@@ -1144,7 +1162,7 @@ a{
     font-size: 12px;
     color: #a9a9a9;
     white-space:nowrap;
-    overflow:hidden;  
+    overflow:hidden;
     text-overflow:ellipsis;
     text-align: right;
 }
@@ -1173,7 +1191,7 @@ a{
     font-size: 0.571429rem;
 }
 .tuanList .tuanPeo img{
-     width: 1.904762rem;
+    width: 1.904762rem;
     height: 1.904762rem;
     vertical-align: middle;
     border-radius:1.904762rem;
@@ -1183,7 +1201,7 @@ a{
     text-align: right;
     height: 0.952381rem;
     line-height: 0.952381rem;
-   /* color: #ce312d;*/
+    /* color: #ce312d;*/
     font-size:12px;
     margin-right: 0.333333rem;
 }
@@ -1243,15 +1261,15 @@ a{
     border: none!important;
 }
 .marTop3{
-	margin-top: 3px!important;
+    margin-top: 3px!important;
 }
 .lunRelative{
-	position: relative;
-	width: 100%;
-	height:13.25rem ;
+    position: relative;
+    width: 100%;
+    height:13.25rem ;
 }
 .marginRig2{
-	margin-right: 3px!important;
+    margin-right: 3px!important;
 }
 
 /*星星样式*/
@@ -1270,7 +1288,7 @@ a{
 .pullUp{margin-bottom: -10px;}
 /*关于我们start*/
 .logoP{
-	padding:2.0rem 0;
+    padding:2.0rem 0;
 }
 .logoP img{
     height:auto;
@@ -1295,7 +1313,7 @@ a{
     width: 100%;
 }
 .anoutMain{
-	height: 100%;
+    height: 100%;
 }
 .baoListTou{
     height: 60px;
@@ -1339,25 +1357,25 @@ a{
     text-overflow:ellipsis;
 }
 .tabUl .width50Im{
-	width: 50%!important;
+    width: 50%!important;
 }
 .marBottom12{
-	margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 .jiaoFa{
-	height: 1.828571rem;
+    height: 1.828571rem;
     width: 1.828571rem;
     border-radius: 1.828571rem;
     overflow: hidden;
 }
 .jiaoFa img{
-	height: 1.828571rem;
+    height: 1.828571rem;
     width: 1.828571rem;
     border-radius: 1.828571rem;
 }
 .shiDet .hasBig{
-	    min-height: 0.952381rem;
-	    height: auto;
+    min-height: 0.952381rem;
+    height: auto;
 }
 .teaMian .teaTou{
     color: #333;
@@ -1393,183 +1411,183 @@ a{
     color: #656565;
 }
 #pingLun{
-	height: 380px;
+    height: 380px;
 }
 .bottom-fix{
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	text-align: center;
-	background: #3a62fa;
-	height: 48px;
-	line-height: 48px;
-	font-size: 13px;
-	color: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: #3a62fa;
+    height: 48px;
+    line-height: 48px;
+    font-size: 13px;
+    color: #fff;
 }
 .padBottom50{
-	padding-bottom: 50px!important;
+    padding-bottom: 50px!important;
 }
 .down-wrapper{
-	position: relative;
-	left: 0;
-	top: 0;
-	height: 100%;
-	overflow: hidden;
-	width: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
 }
 .down-wrapper .blockImg{
-	display: block;
-	vertical-align: middle;
-	width: 100%;
-	border: none;
+    display: block;
+    vertical-align: middle;
+    width: 100%;
+    border: none;
 }
 .hasLinkUl{
-	position: relative;
+    position: relative;
 }
 .hasLinkUl li{
-	height: 100%;
-	position: absolute;
+    height: 100%;
+    position: absolute;
 }
 .hasLinkUl .one{
-	width: 27.5%;
-	left: 0;
-	top: 0;
+    width: 27.5%;
+    left: 0;
+    top: 0;
 }
 .hasLinkUl .two{
-	width: 30%;
-	left: 27.5%;
-	top: 0;
+    width: 30%;
+    left: 27.5%;
+    top: 0;
 }
 .hasLinkUl .three{
-	width: 42.5%;
-	left: 57.5%;
-	top: 0;
+    width: 42.5%;
+    left: 57.5%;
+    top: 0;
 }
 .hasLinkUl .four{
-	width: 41.5%;
-	left: 0;
-	top: 0;
+    width: 41.5%;
+    left: 0;
+    top: 0;
 }
 .hasLinkUl .five{
-	width: 31.5%;
-	left: 41.5%;
-	top: 0;
+    width: 31.5%;
+    left: 41.5%;
+    top: 0;
 }
 .hasLinkUl .six{
-	width: 27%;
-	left: 73%;
-	top: 0;
+    width: 27%;
+    left: 73%;
+    top: 0;
 }
 .marTop7{
-	margin-top: 7px;
+    margin-top: 7px;
 }
 .hideVideo{
-	height: 8.747619rem;
-	width: 100%;
-	z-index: 100;
-	opacity: 0;
+    height: 8.747619rem;
+    width: 100%;
+    z-index: 100;
+    opacity: 0;
     position: absolute;
     left: 0;
     top: 0;
 }
 .courseMian{
-	width:100%;
-	height: auto;
-	display: block;
+    width:100%;
+    height: auto;
+    display: block;
 }
 .video-block{
-	margin: 0 2%;
-	overflow: hidden;
+    margin: 0 2%;
+    overflow: hidden;
 }
 .video-block .course-wrapper{
-	margin: 2%;
-	width: 46%;
-	float: left;
+    margin: 2%;
+    width: 46%;
+    float: left;
 }
 .course-wrapper .conten-out{
-	height: 85px;
-	overflow: hidden;
-	position: relative;
+    height: 85px;
+    overflow: hidden;
+    position: relative;
 }
 .course-wrapper img{
-	width: 100%;
-	height: anuto;
-	overflow: hidden;
-	display: block;
-	margin: 0 auto;
+    width: 100%;
+    height: anuto;
+    overflow: hidden;
+    display: block;
+    margin: 0 auto;
 }
 .tea-course-tit{
     font-size: 12px;
-	min-height: 20px;
-	line-height: 20px;
-	color: #999;
-	text-align: left;
-	margin: 10px 0;
-	word-wrap:break-word;
+    min-height: 20px;
+    line-height: 20px;
+    color: #999;
+    text-align: left;
+    margin: 10px 0;
+    word-wrap:break-word;
 }
 .tea-course-tit .blue-video{
-	font-size: 12px;
-	color: #3a61fa;
-	border:1px solid #3a61fa;
-	padding: 1px 2px;
-	border-radius: 3px;
-	overflow: hidden;
-	margin-right: 3px;
+    font-size: 12px;
+    color: #3a61fa;
+    border:1px solid #3a61fa;
+    padding: 1px 2px;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-right: 3px;
 }
 .course-wrapper  .index-img{
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 10;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
 }
 .course-wrapper .starVideo{
-	position: absolute;
-	left: 40%;
-	width: 20%;
-	height: auto;
-	top: 30px;
-	display: block;
-	z-index: 20;
+    position: absolute;
+    left: 40%;
+    width: 20%;
+    height: auto;
+    top: 30px;
+    display: block;
+    z-index: 20;
 }
 .tabCon .seeMore{
-	height: 30px;
-	line-height: 30px;
-	text-align: center;
-	color: #666;
-	font-size: 13px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #666;
+    font-size: 13px;
 }
 .showImg{
-	display: block;
-	width: 100%;
-	vertical-align: middle;
+    display: block;
+    width: 100%;
+    vertical-align: middle;
 }
 .fixTopShare{
-	position: relative;
-	top: 0;
-	left: 0;
-	z-index: 1;
-	overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
 }
 .fixTopShare img{
-	width: 100%;
-	height: auto;
-	display: block;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 .touchable .vcp-controls-panel{
-	height: 29px;
+    height: 29px;
 }
 .touchable .vcp-error-tips{
-	top: 100%;
+    top: 100%;
 }
 .touchable .vcp-loading{
-	top: 60%!important;
+    top: 60%!important;
 }
 .touchable .vcp-playtoggle{
-	height: 22px;
-	width: 22px;
+    height: 22px;
+    width: 22px;
     background-image: url(../images/share-play.png);
     background-repeat: no-repeat;
     background-size: 100% ;
@@ -1577,198 +1595,198 @@ a{
     margin-top: 2px;
 }
 .touchable  .vcp-timeline{
-	top:5px;
-	left: 15%;
-	width: 70%;
+    top:5px;
+    left: 15%;
+    width: 70%;
 }
 .touchable .vcp-fullscreen-toggle{
-	width: 15px;
-	background-image: url(../images/fullScreen.png);
-	background-repeat: no-repeat;
+    width: 15px;
+    background-image: url(../images/fullScreen.png);
+    background-repeat: no-repeat;
     background-size: 100% ;
     margin-right: 10px;
     margin-top: 6px;
 }
 .share-title{
-	font-size: 12px;
-	color: #333333;
-	height: 30px;
-	line-height: 30px;;
+    font-size: 12px;
+    color: #333333;
+    height: 30px;
+    line-height: 30px;;
 }
 .share-hasLogo img{
-	display: block;
-	width: 53px;
-	height: auto;
-	margin: 10px auto;
+    display: block;
+    width: 53px;
+    height: auto;
+    margin: 10px auto;
 }
 .share-con{
-	color: #333333;
-	font-size: 12px;
-	line-height: 22px;
+    color: #333333;
+    font-size: 12px;
+    line-height: 22px;
 }
 .share-underTit{
-	font-size: 13px;
-	color: #333;
-	font-weight: bold;
-	text-align: center;
-	padding-bottom: 15px;
+    font-size: 13px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 15px;
 }
 .downLink{
-	font-size: 13px;
-	color: #fff;
-	height: 50px;
-	line-height: 50px;
-	border-radius: 4px;
-	overflow: hidden;
-	background: #3a62fa;
-	width: 94%;
-	text-align: center;
-	z-index: -1;
+    font-size: 13px;
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #3a62fa;
+    width: 94%;
+    text-align: center;
+    z-index: -1;
 }
 .vcp-player .vcp-poster-pic .default{
-	height: 100%!important;
-	 width: 100%!important;;
+    height: 100%!important;
+    width: 100%!important;;
     left: 0%!important;;
     top: 0%!important;;
     -ms-transform: translate(0%, 0%)!important;;
     -webkit-transform: translate(0%, 0%)!important;;
-	transform: translate(0%, 0%)!important;; 
+    transform: translate(0%, 0%)!important;;
 }
 .xian-imgcon{
-	height: 3.095238rem;
-	overflow: hidden;
+    height: 3.095238rem;
+    overflow: hidden;
     margin-top: -1rem;
 }
 .marTop14{
-	margin-top: 14px;
+    margin-top: 14px;
 }
 .font999{
-	color: #999;
+    color: #999;
 }
 .startCourseP{
-	size: 12px;
-	height: 12px;
-	line-height: 12px;
+    size: 12px;
+    height: 12px;
+    line-height: 12px;
 }
 .greySpace{
-	height: 13px;
-	background: #f6f6f6;
+    height: 13px;
+    background: #f6f6f6;
 }
 /*下载页*/
 .down-page .down-up{
-	background: url(../images/downBg.png) no-repeat;
-	background-size: 100% 100%;
-	font-weight: 100;
-	padding:70px 14px 0;
-	overflow: hidden;
-	background-color:#fff;
+    background: url(../images/downBg.png) no-repeat;
+    background-size: 100% 100%;
+    font-weight: 100;
+    padding:70px 14px 0;
+    overflow: hidden;
+    background-color:#fff;
 }
 .down-page .title{
-	font-size: 1.0rem;
-	color: #fff;
-	font-weight: 100;
-	margin-bottom: 10px;
+    font-size: 1.0rem;
+    color: #fff;
+    font-weight: 100;
+    margin-bottom: 10px;
 }
 .title-con{
-	font-size: 13px;
-	color: #fff;
-	font-weight: 100;
-	margin-bottom: 2px;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 100;
+    margin-bottom: 2px;
 }
 .down-up .left{
-	float: left;
-	width: 60%;
-	overflow: hidden;
+    float: left;
+    width: 60%;
+    overflow: hidden;
 }
 .right{
-	width: 40%;
-	overflow: hidden;
+    width: 40%;
+    overflow: hidden;
 }
 .down-up .right img{
-	float: right;
+    float: right;
 }
 .down-page .down-code{
-	height: auto;
+    height: auto;
 }
 .down-code img{
-	width: 3.5rem;
-	height: auto;
-	display: inline-block;
-	vertical-align: middle;
-	float: left;
+    width: 3.5rem;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    float: left;
 }
 .down-code{
-	margin-top: 40px;
+    margin-top: 40px;
 }
 .phone {
-	margin-top: 60px;
+    margin-top: 60px;
 }
 .phone img{
-	width: 100%;
-	height: auto;
-	display: block;
-	vertical-align: middle;
+    width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: middle;
 }
 .down-link{
-	float: left;
-	margin-left: 10px;
-	margin-top: 8px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 8px;
 }
 .down-link li{
-	overflow: hidden;
-	margin-bottom: 5px;
+    overflow: hidden;
+    margin-bottom: 5px;
 }
 .down-link li a{
-	display: block;
-	overflow: hidden;
+    display: block;
+    overflow: hidden;
 }
 .down-down{
-	margin:20px 14px 10px;
+    margin:20px 14px 10px;
     overflow: hidden;
 }
 .down-down .left .title,.down-down .left .title-con{
-	color: #333;
+    color: #333;
 }
 .down-down .left{
-	float: right;
+    float: right;
     margin-top: 2.0rem;
     width: 57%;
 }
 .down-down .right{
-	float: left;
+    float: left;
 }
 /*2017-4-11 by fcy*/
 .coverDiv{
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
 }
 .offlineBlo{
-	height: auto;
+    height: auto;
 }
 .clearance{
-	font-size: 0.6rem;
+    font-size: 0.6rem;
     height: 1.7rem;
     line-height: 1.7rem;
     color: #666666;
     background: #f5f5f5;
 }
 #jiGouCon{
-	display: none;
+    display: none;
 }
 .marBottom2{
-	margin-bottom: 3px;
+    margin-bottom: 3px;
 }
 .xianCon .redFont{
-	text-align: left;
-	color: #3a62fa;
-	font-size: 16px;
+    text-align: left;
+    color: #3a62fa;
+    font-size: 16px;
 }
 .xianCon .area{
-	font-size: 12px;
-	color: #999999;
+    font-size: 12px;
+    color: #999999;
 }
 /*creat by fcyFang end*/
 #load-wrapper {
@@ -1789,132 +1807,132 @@ a{
     background-size: 100%
 }
 #load-wrapper p{
-	text-align: center;
-	color: #333;
-	font-size: 12px;
+    text-align: center;
+    color: #333;
+    font-size: 12px;
 }
 .webkBlo .tagsSpan{
-	display: inline-block;
-	border:1px solid #f5f5f5;
-	font-size: 0.6rem;
-	color: #666666;
-	padding: 0px 4px;
-	border-radius: 5px;
-	margin-right: 5px;
-	line-height: 1.25rem;
+    display: inline-block;
+    border:1px solid #f5f5f5;
+    font-size: 0.6rem;
+    color: #666666;
+    padding: 0px 4px;
+    border-radius: 5px;
+    margin-right: 5px;
+    line-height: 1.25rem;
     font-size: 0.6rem;
 }
 .teaJieShao{
-	line-height: 30px;
-	min-height: 30px;
-	border-bottom: 1px solid #ebeaea;
+    line-height: 30px;
+    min-height: 30px;
+    border-bottom: 1px solid #ebeaea;
 }
 .showtitle{
     height: 2.25rem!important;
     line-height: 2.25rem!important;
 }
 .teaCard{
-	padding: 0.7rem 0;
-	font-size: 13px;
-	color: #333333;
+    padding: 0.7rem 0;
+    font-size: 13px;
+    color: #333333;
 }
 .teaCard span{
-	display: inline-block;
-	width: 33%;
-	margin-bottom: 0.7rem;
-	height: 0.75rem;
-	line-height: 0.75rem;
+    display: inline-block;
+    width: 33%;
+    margin-bottom: 0.7rem;
+    height: 0.75rem;
+    line-height: 0.75rem;
     font-size: 0.5rem;
 }
 .teaCard img{
-	width: 0.75rem;
-	height: 0.75rem;
-	margin-right: 5px;
-	vertical-align: top;
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-right: 5px;
+    vertical-align: top;
 }
 .faceTalkp{
-	position: relative;
-	min-height: 20px;
-	overflow: hidden;
+    position: relative;
+    min-height: 20px;
+    overflow: hidden;
 }
 .faceTalkp span{
-	position: absolute;
-	left: 0;
-	top: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 .faceTalkp .conp{
-	min-height: 20px;
-	overflow-wrap: break-word;
+    min-height: 20px;
+    overflow-wrap: break-word;
     display: inline-block;
     margin-left: 20%;
     margin-right: 12px;
 }
 .luckArea .price,.luckArea .delFont{
-	float: right;
+    float: right;
 }
 .prizeBlo{
-	margin: 0px 0;
-	height: 30px;
-	text-align: center;
+    margin: 0px 0;
+    height: 30px;
+    text-align: center;
 }
 .prizeBlo .countDown{
-	padding: 3px 4px;
-	border-radius: 4px;
-	overflow: hidden;
-	background: #ffcc33;
-	font-size: 12px;
-	display: inline-block;
+    padding: 3px 4px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #ffcc33;
+    font-size: 12px;
+    display: inline-block;
 }
 .prizeBlo .countDown span{
-	color: #cc3333;
+    color: #cc3333;
 }
 .luckblo .areaLuck{
-	font-size: 12px;
-	color: #999999;
+    font-size: 12px;
+    color: #999999;
 }
 .luckblo .delFont,.luckblo .price{
-	float: right;
+    float: right;
 }
 .suprisePeo{
-	background: #f5f5f5;
-	padding: 14px 20px;
-	display: none;
+    background: #f5f5f5;
+    padding: 14px 20px;
+    display: none;
 }
 .suprisePeo .hasPrize img{
-	width: 45px;
-	height: 45px;
-	border-radius: 100%;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
 }
 .suprisePeo .hasPrize{
-	background: #fff;
-	padding: 14px;
+    background: #fff;
+    padding: 14px;
 }
 .suprisePeo .prizeCon{
-	margin-left: 14px;
-	font-size: 12px;
-	color: #676767;
+    margin-left: 14px;
+    font-size: 12px;
+    color: #676767;
 }
 .hasPrize{
-	position: relative;
-} 
+    position: relative;
+}
 .hasPrize .redPrize{
-	width: 35px;
-	position: absolute;
-	right: -10px;
-	top: -5px;
+    width: 35px;
+    position: absolute;
+    right: -10px;
+    top: -5px;
 }
 .keCheng li:nth-of-type(2) a{
-	color: #333!important;
+    color: #333!important;
 }
 .video-slider .errload{
-	font-size: 14px;
-	color: #fff;
-	display: block;
-	position: absolute;
-	bottom: 2rem;
-	left: 0;
-	width: 100%;
-	text-align: center;
+    font-size: 14px;
+    color: #fff;
+    display: block;
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    width: 100%;
+    text-align: center;
 }
 #mediaplayer{
     overflow: hidden;
@@ -1926,7 +1944,7 @@ a{
 }
 .jwplayer{ height:8.74762rem!important;}
 #mediaplayer_display .jwpreview{
-     width: 100%;
+    width: 100%;
     vertical-align: middle;
     background-size: cover!important;
     background-position: center center;
@@ -1959,96 +1977,96 @@ a{
     border-color: #4ac4ab;
 }
 .blueFree{
-	color:#3a62f8!important;
+    color:#3a62f8!important;
 }
 /*dingzhi*/
 .compete-blo .compete-img{
-	display: block;
-	margin-right: 8px;
-	height: 50px;
+    display: block;
+    margin-right: 8px;
+    height: 50px;
     width: 50px;
     border-radius: 50%;
     overflow: hidden;
 }
 .compete-blo .name,.compete-blo .address{
-	display: block;
-	line-height: 24px;
+    display: block;
+    line-height: 24px;
 }
 .compete-blo .name{
-	font-size: 14px;
-	color: #333333;
+    font-size: 14px;
+    color: #333333;
 }
 .compete-blo .address{
-	font-size: 13px;
-	color: #666666;
+    font-size: 13px;
+    color: #666666;
 }
 .content-detail .time{
-	font-size: 13px;
-	color: #999;
-	line-height: 24px;
+    font-size: 13px;
+    color: #999;
+    line-height: 24px;
 }
 .content-detail{
-	margin: 14px 0 0;
+    margin: 14px 0 0;
 }
 .content-check{
-	margin: 14px 0;
-	font-size: 15px;
-	color: #333;
+    margin: 14px 0;
+    font-size: 15px;
+    color: #333;
 }
 .content-desc{
-	font-size: 13px;
-	color: #333;
-	line-height: 20px;
+    font-size: 13px;
+    color: #333;
+    line-height: 20px;
 }
 .content-desc .desc-con{
-	text-indent:4em;
+    text-indent:4em;
 }
 .label-ul{
-	margin-top: 14px;
+    margin-top: 14px;
 }
 .label-ul .label-span{
-	display: inline-block;
-	padding: 1px 2px;
-	margin-right: 3px;
-	font-size: 12px;
-	color: #666;
-	border-radius: 3px;
-	border:1px solid #999999;
+    display: inline-block;
+    padding: 1px 2px;
+    margin-right: 3px;
+    font-size: 12px;
+    color: #666;
+    border-radius: 3px;
+    border:1px solid #999999;
 }
 .compete-title{
-	padding: 14px 0;
-	font-size: 14px;
-	color: #333;
+    padding: 14px 0;
+    font-size: 14px;
+    color: #333;
 }
 .compete-list{
-	padding: 14px 0;
+    padding: 14px 0;
 }
 .compete-list .compete-img{
-	display: block;
-	margin-right: 8px;
-	height: 50px;
+    display: block;
+    margin-right: 8px;
+    height: 50px;
     width: 50px;
     border-radius: 50%;
     overflow: hidden;
 }
 .compete-tea{
- 	font-size: 13px;
- 	margin-bottom: 3px;
- }
- .compete-tea .name{
- 	color: #666666;
- }
- .compete-tea .time{
- 	color: #999;
- }
- /*问答*/
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+.compete-tea .name{
+    color: #666666;
+}
+.compete-tea .time{
+    color: #999;
+}
+/*问答*/
 /* .bodyout{
     padding: 0 14px;
  }*/
- .askout{
+.askout{
     padding: 0 14px;
     margin:0 0 14px  0;
- }
+}
 .margin-blo{
     height: 14px;
     background: #f5f5f5;
@@ -2132,7 +2150,7 @@ a{
     width: 100%;
 }
 .borderRight{
-      border-right: 1px solid #c3c3c3;
+    border-right: 1px solid #c3c3c3;
 }
 .ansout{
     padding: 14px 14px 30px 14px;
@@ -2205,71 +2223,71 @@ a{
     padding-top: 10px;
 }
 .publish_per{
-	line-height: 35px;
+    line-height: 35px;
 }
 .publish_per .publish_img{
-	height: 35px;
-	width: 35px;
-	border-radius: 50%;
-	overflow: hidden;
-	margin-right: 10px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
 }
 .publish_per .publish_con{
-	font-size: 12px;
-	color: #999999;
+    font-size: 12px;
+    color: #999999;
 }
 .publish_con .publisher{
-	color: #666;
+    color: #666;
 }
 .publish_fee{
-	display: inline-block;
-	float: right;
+    display: inline-block;
+    float: right;
 }
 .publish_fee .red_fee{
-	color: #cc3333;
+    color: #cc3333;
 }
 .borBottom10{
-	border-bottom: 10px solid #f5f5f5;
+    border-bottom: 10px solid #f5f5f5;
 }
 .party-cover{
-	height: 180px;
-	background-size: cover;
+    height: 180px;
+    background-size: cover;
 }
 .wrapbreak{word-break:break-all; }
 .takeBlo{
-	overflow: hidden;
-	padding: 8px 14px;
+    overflow: hidden;
+    padding: 8px 14px;
 }
 .takeBlo .takeSpan{
-	height: 14%;
-	width: 35px;
-	border-radius: 50%;
-	overflow: hidden;
-	display: block;
-	margin: 0 8px;
-	float: left;
+    height: 14%;
+    width: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: block;
+    margin: 0 8px;
+    float: left;
 }
 .takeBlo .takeSpan img{
-	width: 35px;
-	height: 35px;
-	border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
 }
 .takeIn{
-	padding: 14px;
-	font-size: 14px;
-	color: #333;
+    padding: 14px;
+    font-size: 14px;
+    color: #333;
 }
 .greyMargin{
-	height: 14px;
-	background:#f5f5f5 ;
+    height: 14px;
+    background:#f5f5f5 ;
 }
 .teaJianJie{
-	    padding-left: 0.714286rem;
-	     padding-right: 0.714286rem;
+    padding-left: 0.714286rem;
+    padding-right: 0.714286rem;
 }
 .greyMargin8{
-	height: 8px;
-	background:#f5f5f5 ;
+    height: 8px;
+    background:#f5f5f5 ;
 }
 .center_pos .title-con{
     font-size: 0.65rem;
@@ -2289,22 +2307,22 @@ a{
     margin-top: 0.1rem;
 }
 .fliter_img{
-    filter: url(blur.svg#blur); 
-    -webkit-filter: blur(10px); 
-       -moz-filter: blur(10px);
-        -ms-filter: blur(10px);    
-            filter: blur(10px);
-    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false); 
+    filter: url(blur.svg#blur);
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false);
     opacity: 0.5;
 }
 .replayBg{
-   overflow: hidden;
-   margin-top: .238095rem;
+    overflow: hidden;
+    margin-top: .238095rem;
 }
 .replayBg li{
     background-size:cover;
     height: 5.714286rem;
-    margin-bottom: .619048rem; 
+    margin-bottom: .619048rem;
     border-radius: 5px;
     overflow: hidden;
     float: left;
@@ -2322,13 +2340,13 @@ a{
     height: 4rem;
 }
 .explain-title{
-	color: #333;
-	font-size: 14px;
+    color: #333;
+    font-size: 14px;
 }
 .explain-con{
-	font-size: 13px;
-	color: #666666;
-	line-height: 21px;
+    font-size: 13px;
+    color: #666666;
+    line-height: 21px;
 }
 .stu-tabul .active span{
     color: #4ac4ab!important;
@@ -2345,7 +2363,7 @@ a{
     padding-right: 14px!important;
 }
 .marginleftright{
-     margin-left: 14px!important;
+    margin-left: 14px!important;
     margin-right: 14px!important;
 }
 .margin-grey{
@@ -2353,7 +2371,7 @@ a{
     height: 10px;
 }
 .greenFont{
-    color:#4ac4ab!important; 
+    color:#4ac4ab!important;
 }
 .new-stu .under-video .redType{
     padding: .095238rem .142857rem;
@@ -2390,8 +2408,8 @@ a{
     font-size: .714286rem;
 }
 .new-stu .tabcheck{
-   height: 2.285714rem;
-   line-height: 2.285714rem;
+    height: 2.285714rem;
+    line-height: 2.285714rem;
 }
 .new-stu .tabcheck li{
     width: 33%;
@@ -2426,9 +2444,9 @@ a{
     height: 1.190476rem;
     line-height: 25px;
     color: #333333;
-    white-space:nowrap; 
-    text-overflow:ellipsis; 
-    -o-text-overflow:ellipsis; 
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    -o-text-overflow:ellipsis;
     overflow: hidden;
     font-size: .571429rem;
 }
@@ -2500,12 +2518,12 @@ a{
 .directory .mulu-right .mulu-des{
     font-size: .666667rem;
     color: #333;
-    line-height: 1.190476rem;   
+    line-height: 1.190476rem;
 }
 .directory .mulu-right .mulu-con{
     font-size: .47619rem;
     color: #999;
-    line-height: .952381rem;  
+    line-height: .952381rem;
 }
 .buyingMes{
     width: 92%;
@@ -2516,7 +2534,7 @@ a{
     margin: auto;
 }
 .buyingMes p{
-    font-size: 0.22rem;
+    font-size: 0.4rem;
     color:#cb3332;
 }
 .buyingMes .buyProgress{

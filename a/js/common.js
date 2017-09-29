@@ -15,10 +15,16 @@ var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android�
 var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
 //线上接口
 //var jieUrl="http://localhost:10001/msg/";
+//var jieUrl="http://j.shjujiao.com/msg/";
+//var jieUrl="http://122.152.194.233:8080/msg/";
+var jieUrl="http://192.168.1.135:8080/msg/";
 //线下接口
-var jieUrl="http://122.152.194.233:8080/msg/";
+//var jieUrl="http://122.152.194.233:8080/msg/";
+//var jieUrl="http://http://192.168.0.166:8080/msg/";
 //var pageUrl="http://j.shjujiao.com/static/page/a/"
-var pageUrl="http://122.152.194.233:8080/static/page/a/"
+//var pageUrl="http://122.152.194.233:8080/static/page/a/"
+var pageUrl="http://192.168.1.135:8080/static/page/a/"
+//var pageUrl="http://http://192.168.0.166:8080/static/page/a/"
 //var jieUrl="http://118.89.150.168";
 var oldUrl="http://118.89.150.168";
 /*判断页面中是否含有null或是undefined*/
