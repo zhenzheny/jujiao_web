@@ -552,7 +552,7 @@
 								if(isAndroid==1){
 									videoList="<video id='my_video' style='height: 100%'><source  controls='controls' ></video><div class='controller' id='controller'><div class='start icon'> &#xe672;</div> <div class='progress'><div class='inner'></div></div><div class='fullscreen icon' id='fullScreenBtn'>&#xe643;</div></div>";
 								}else if(isiOS==1){
-										videoList="<video id='my_video' style='height: 100%'><source  controls='controls'></video><div class='controller' id='controller'><div class='start icon'> &#xe672;</div> <div class='progress'><div class='inner'></div></div><div class='fullscreen icon' id='fullScreenBtn'>&#xe643;</div></div>";
+										videoList="<video id='my_video' style='height: 100%' ><source  controls='controls' webkit-playsinline=''></video><div class='controller' id='controller'><div class='start icon'> &#xe672;</div> <div class='progress'><div class='inner'></div></div><div class='fullscreen icon' id='fullScreenBtn'>&#xe643;</div></div>";
 								}
 								$(".imgbtn").on('click',function() {
 									var first=$(".keCheng li").eq(1).children("a").attr("data-id");
