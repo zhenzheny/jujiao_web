@@ -150,9 +150,11 @@
 							GetQueryString("id");
 							var idNum=GetQueryString("id");
 							var userId=GetQueryString("user_id");
+							var longitude=GetQueryString("longitude");
+							var latitude=GetQueryString("latitude");
 							var relaId=idNum;
 							var uId=userId;
-							var parm={"id":idNum,"user_id":userId};
+							var parm={"id":idNum,"user_id":userId,"longitude":longitude,"latitude":latitude};
 							}
 							else{
 								var parm={"id":1,"user_id":1};
@@ -173,7 +175,7 @@
 								          "<span class='greyEr size12'>"+(data.position==undefined?" ":data.position)+"</span></p>";
 				              	$("#teaDetail").html(conTea);
 								if(data.start_time==null){
-									data.start_time=null;
+									data.start_time=" ";
 								}else{
 									if(data.start_time.slice(0,4)==1970){
 										data.start_time="随到随学";
@@ -222,14 +224,11 @@
 								/*老师详情*/
 								var teacherDetail="<img src='"+(data.league_logo==null?data.teacher_img_url:data.league_logo)+"'/>";
 								$(".teacherImg").html(teacherDetail);
-								var teacherDetail1="<p>"+data.lecturer+(data.ide_name==null ?"":data.ide_name)+"</p><p class='organization'>"+(data.league_name==null?"":data.league_name)+"</p>";
+								var teacherDetail1="<div><span>"+data.lecturer+(data.ide_name==null ?"":data.ide_name)+"</span><img class='groupSchool' src='../images/groupschool_details_isjudge.png'></div><p class='organization'>"+(data.league_name==null?"":data.league_name)+"</p>";
 								$(".teachIntro").html(teacherDetail1);
-								var courseDetail="<p class='title color2C size13 padTop20 marBottom7'>课程须知</p>"+
-										"<p class='xuzhiP size13 color999'>"+data.notice+"</p>"
-										"<p class='title color2C size13 padTop20 marBottom7'>老师能告诉你学到什么？</p>";
 								/*课程须知*/
 								var detailList=(data.caption).replace("\n","</br>");
-								courseDetail+="<p class='xuzhiP size13 color999'>"+detailList+"</p>";
+								var courseDetail="<p class='xuzhiP size13 color999'>"+detailList+"</p>";
 								$("#corseXuZhi").html(courseDetail);
 								/*机构详情*/
 								var jiGouCon="<p class='agencyImg marRight9'><img src='"+data.imgurl+"' /></p><div class='agencyMes webInp'>"+
@@ -239,6 +238,16 @@
 						                  "<li>满意度98%</li><li>学生数10444</li><li>课程38</li></ul></div>";
 						    /*机构详情*/
 						   $("#jiGouCon").html(jiGouCon);
+							$(".classAddress").on('click',function(){
+								mapUrl();
+							})
+							function mapUrl(){
+									if(isAndroid==1){
+										window.android.Location(data.area_name+data.address,data.latitude,data.longitude);
+									}else if(isiOS==1){
+										window.webkit.messageHandlers.Location.postMessage({"address":data.area_name+data.address,"latitude":data.latitude,"longitude":data.longitude});
+									}
+							}
                            if(hasPlus>-1){
 	                           	$("#jiGouCon").on('click',function(){
 	                           	jiGouUrl(data.institute_id,uId);

@@ -50,6 +50,11 @@
                     </div>
                 </div>
                  <div class="tabCon disNone">
+					 <!--老師   頭像   機構-->
+					 <div class="teacherMes borBottom borBottom1" id="teacherMes">
+						 <div class="teacherImg"></div>
+						 <div class="teachIntro"></div>
+					 </div>
                     <div class="padLeftRight padBottom20" id="corseXuZhi">
 		           </div>
 		          <a class="disBlock">
@@ -303,14 +308,17 @@
 		                               var kaiTime=parseInt($(".kaiTime").html());
 		                               $(".kaiTime").html(chuoTime(kaiTime)+"开课");
 	                                }
-	                                var courseDetail="<p class='title color2C size13 padTop20 marBottom7'>课程须知</p>"+
-							            "<p class='xuzhiP size13 color999 wrapbreak'>"+data.notice+"</p>"+
-							            "<p class='title color2C size13 padTop20 marBottom7'>老师能告诉你学到什么？</p>";
+									/*老师详情*/
+									var teacherDetail="<img src='"+(data.league_logo==null?data.teacher_img_url:data.league_logo)+"'/>";
+									$(".teacherImg").html(teacherDetail);
+									var teacherDetail1="<div><span>"+data.lecturer+(data.ide_name==null ?"":data.ide_name)+"</span><img class='groupSchool' src='../images/groupschool_details_isjudge.png'></div><p class='organization'>"+(data.league_name==null?"":data.league_name)+"</p>";
+									$(".teachIntro").html(teacherDetail1);
+	                                var courseDetail;
 									/*课程须知*/
 									var detailList=data.caption;
 									var detailArr=detailList.split("，");
 									for(i=0;i<detailArr.length;i++){
-										courseDetail+="<p class='xuzhiP size13 color999 wrapbreak'>"+detailArr[i]+"</p>";
+										courseDetail="<p class='xuzhiP size13 color999 wrapbreak'>"+detailArr[i]+"</p>";
 									}
 									$("#corseXuZhi").html(courseDetail);
 									
